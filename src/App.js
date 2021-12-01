@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar/Navbar";
 
 const App = () => {
   return (
-    <Flex>
+    <Flex background={"#131313"} flexDir={"row"}>
       <Navbar />
     </Flex>
   );
