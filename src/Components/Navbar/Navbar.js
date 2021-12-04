@@ -1,5 +1,5 @@
-import React from "react";
-import { Link as RouteLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link as RouteLink, useNavigate } from "react-router-dom";
 import {
   Flex,
   Text,
@@ -10,6 +10,9 @@ import {
 } from "@chakra-ui/react";
 
 const Navbar = () => {
+  const [isIn, setisIn] = useState(false);
+  const navigate = useNavigate();
+
   const Links = [{ title: "Home" }, { title: "Comics" }, { title: "About" }];
   const hoverStyles = {
     linkText: { color: "#FC6045" },
@@ -19,8 +22,16 @@ const Navbar = () => {
     },
     buttonText: { color: "#FC6045" },
   };
+  useEffect(() => {
+    if (localStorage.getItem("authToken")) {
+      setisIn(true);
+    }
+  }, [isIn]);
 
-  const user = null;
+  const removeToken = () => {
+    localStorage.removeItem("authToken");
+    setisIn(false);
+  };
 
   return (
     <Flex
@@ -46,26 +57,21 @@ const Navbar = () => {
         </UnorderedList>
       </Flex>
       <Flex width={"30%"} flexDir={"row"} justifyContent={"center"}>
-        {user ? (
+        {isIn ? (
           <Button
-            background={"#131313"}
-            border={"2px solid #FD1D1D"}
-            _hover={hoverStyles.bottonHover}
+            background={"transparent"}
+            color={"#FD1D1D"}
+            fontSize={"25px"}
+            onClick={removeToken}
           >
-            <Text
-              color={"#FD1D1D"}
-              fontSize={"25px"}
-              _hover={hoverStyles.buttonText}
-            >
-              Logout
-            </Text>
+            Log Out
           </Button>
         ) : (
-          <Button
+          <RouteLink
             background={"#131313"}
             border={"2px solid #FD1D1D"}
             _hover={hoverStyles.bottonHover}
-            to={"/auth"}
+            to={"/login"}
           >
             <Text
               color={"#FD1D1D"}
@@ -74,7 +80,7 @@ const Navbar = () => {
             >
               Sign-In
             </Text>
-          </Button>
+          </RouteLink>
         )}
       </Flex>
     </Flex>
