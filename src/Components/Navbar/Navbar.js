@@ -40,6 +40,7 @@ const Navbar = () => {
       flexDirection={"row"}
       alignItems={"center"}
       justifyContent={"space-between"}
+      backgroundImage="linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.0))"
     >
       <Flex width={"70%"}>
         <UnorderedList display={"flex"} flexDir={"row"} listStyleType={"none"}>
@@ -47,8 +48,9 @@ const Navbar = () => {
             <ListItem padding={"10%"}>
               <Text
                 color={"#FD1D1D"}
-                fontSize={"22px"}
+                fontSize={"25px"}
                 _hover={hoverStyles.linkText}
+                textShadow={"2px 2px 3px #000"}
               >
                 {data.title}
               </Text>
@@ -63,6 +65,7 @@ const Navbar = () => {
             color={"#FD1D1D"}
             fontSize={"25px"}
             onClick={removeToken}
+            textShadow={"2px 2px 3px #000"}
           >
             Log Out
           </Button>
@@ -77,6 +80,7 @@ const Navbar = () => {
               color={"#FD1D1D"}
               fontSize={"25px"}
               _hover={hoverStyles.buttonText}
+              textShadow={"2px 2px 3px #000"}
             >
               Sign-In
             </Text>

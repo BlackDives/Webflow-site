@@ -33,7 +33,7 @@ const components = {
   },
   Text: {
     baseStyle: {
-      color: "black",
+      color: "white",
     },
   },
   Heading: {
