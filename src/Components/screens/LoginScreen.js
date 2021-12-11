@@ -56,9 +56,9 @@ const LoginScreen = ({ history }) => {
 
   return (
     <Flex flexDir={"row"} height={"100%"}>
-      <Flex width={"50%"}>
-        <Text color={"white"} fontSize={"40px"}>
-          Webflow
+      <Flex width={"50%"} flexDir={"row"} justifyContent={"center"}>
+        <Text color={"white"} fontSize={"50px"} textAlign={"center"}>
+          WEBFLOW
         </Text>
       </Flex>
       <Flex
@@ -83,6 +83,8 @@ const LoginScreen = ({ history }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 variant={"outline"}
                 _placeholder={{ color: "#131313" }}
+                background={"white"}
+                color={"black"}
               />
             </FormControl>
 
@@ -96,6 +98,8 @@ const LoginScreen = ({ history }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 variant={"outline"}
                 _placeholder={{ color: "#131313" }}
+                background={"white"}
+                color={"black"}
               />
             </FormControl>
             <Button
@@ -108,7 +112,10 @@ const LoginScreen = ({ history }) => {
               LOG IN
             </Button>
             <Text>
-              Don't have an account? <Link to="/register">Register</Link>
+              Don't have an account?{" "}
+              <Link to="/register">
+                <span style={{ color: "black" }}>Register</span>
+              </Link>
             </Text>
           </Flex>
         </form>

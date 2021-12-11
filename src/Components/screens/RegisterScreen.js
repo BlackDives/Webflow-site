@@ -85,8 +85,9 @@ const RegisterScreen = () => {
                 placeholder="Enter username..."
                 value={username}
                 required
+                background={"white"}
                 onChange={(e) => setUsername(e.target.value)}
-                color={"white"}
+                color={"black"}
                 variant={"outline"}
                 _placeholder={{ color: "#131313" }}
               />
@@ -102,7 +103,8 @@ const RegisterScreen = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                color={"white"}
+                color={"black"}
+                background={"white"}
                 variant={"outline"}
                 _placeholder={{ color: "#131313" }}
               />
@@ -118,9 +120,10 @@ const RegisterScreen = () => {
                 placeholder="enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                color={"white"}
+                color={"black"}
                 variant={"outline"}
                 _placeholder={{ color: "#131313" }}
+                background={"white"}
               />
             </FormControl>
             <Button
@@ -141,7 +144,7 @@ const RegisterScreen = () => {
                   display={"inline"}
                   _hover={{ color: "#9518FC" }}
                 >
-                  Login
+                  <span style={{ color: "black" }}>Login</span>
                 </Text>
               </Link>
             </Text>

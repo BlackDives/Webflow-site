@@ -15,6 +15,7 @@ import {
   BrowserRouter as Router,
   Routes as Switch,
   Route,
+  Link as RouteLink,
 } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Comic from "../comic/comics";
@@ -100,11 +101,13 @@ const HomeScreen = () => {
         </Text>
         <Flex width={"100%"} justifyContent={"center"} alignItems={"center"}>
           <Grid templateColumns={"repeat(4, 1fr)"} gridGap={6} width={"50%"}>
-            <Comic title={"The Avengers"} cover={ComicCover} />
-            <Comic title={"The soulless lime"} />
-            <Comic title={"The soulless lime"} />
-            <Comic title={"The soulless lime"} />
-            <Comic title={"The soulless lime"} />
+            <RouteLink to="/comics/avengers">
+              <Comic title={"The Avengers"} cover={ComicCover} />
+            </RouteLink>
+            <Comic title={"Placeholder"} />
+            <Comic title={"Placeholder"} />
+            <Comic title={"Placeholder"} />
+            <Comic title={"Placeholder"} />
           </Grid>
         </Flex>
       </Flex>

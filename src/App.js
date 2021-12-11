@@ -13,6 +13,7 @@ import PrivateScreen from "./Components/screens/PrivateScreen";
 import LoginScreen from "./Components/screens/LoginScreen";
 import RegisterScreen from "./Components/screens/RegisterScreen";
 import HomeScreen from "./Components/screens/HomeScreen";
+import Avengers from "./Components/comic/Avengers";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/register" element={<RegisterScreen />} />
           <Route path="/" element={<HomeScreen />}></Route>
+          <Route path="/comics/avengers" element={<Avengers />} />
           {/* <Route path="/forgotpassword" component={LoginScreen} />
           <Route path="/passwordreset/:resettoken" component={LoginScreen} /> */}
         </Switch>
